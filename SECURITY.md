@@ -8,4 +8,3 @@ the community, but it does come with some risks.
 
 Privately discuss, fix, and publish information about security vulnerabilities in this repository by drafting a new 
 [security advisory](https://github.com/osinfra-io/terraform-google-cloud-sql/security/advisories/new).
-![security]()
