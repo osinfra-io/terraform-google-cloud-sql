@@ -1,0 +1,31 @@
+# Test Kitchen
+# https://docs.chef.io/workstation/config_yml_kitchen
+
+driver:
+  name: terraform
+
+platforms:
+  - name: gcp
+
+provisioner:
+  name: terraform
+
+transport:
+  command_timeout: 3600
+  name: terraform
+
+verifier:
+  name: terraform
+  color: true
+
+suites:
+  - name: default_cloud_sql
+    transport:
+      root_module_directory: test/fixtures/default_cloud_sql
+    verifier:
+      systems:
+        - name: inspec_gcp
+          backend: gcp
+          controls:
+            - compute_global_address
+            - database_instance
