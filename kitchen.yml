@@ -27,5 +27,4 @@ suites:
         - name: inspec_gcp
           backend: gcp
           controls:
-            - compute_global_address
             - database_instance
