@@ -1,0 +1,9 @@
+# Infracost Config File
+# https://www.infracost.io/docs/features/config_file
+
+version: 0.1
+
+projects:
+  - name: "terraform-google-cloud-sql - Default Cloud SQL"
+    path: test/fixtures/default_cloud_sql
+    usage_file: test/fixtures/default_cloud_sql/infracost-usage.yml
