@@ -1,4 +1,4 @@
-# <img align="left" width="45" height="45" src="https://user-images.githubusercontent.com/1610100/195462632-f70a64d6-7811-4da3-aa82-c65cbbb74754.png"> Google Cloud Platform - Project Terraform Module
+# <img align="left" width="45" height="45" src="https://github.com/osinfra-io/terraform-google-cloud-sql/assets/1610100/7b264c45-cb29-457b-86c9-40e3b82e44d4"> Google Cloud Platform - Project Terraform Module
 
 **[GitHub Actions](https://github.com/osinfra-io/terraform-google-cloud-sql/actions):**
 
