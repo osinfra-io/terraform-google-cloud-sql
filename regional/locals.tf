@@ -2,5 +2,5 @@
 # https://www.terraform.io/docs/language/values/locals.html
 
 locals {
-  network = "projects/${var.host_project}/global/networks/${var.network}"
+  network = "projects/${var.host_project_id}/global/networks/${var.network}"
 }

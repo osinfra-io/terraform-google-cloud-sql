@@ -46,11 +46,9 @@ module "test" {
     }
   ]
 
-  database_version               = "POSTGRES_15"
   deletion_protection            = false
-  host_project                   = var.host_project_id
+  host_project_id                = var.host_project_id
   instance_name                  = "${var.instance_name}-${random_id.random.hex}"
-  machine_tier                   = "db-f1-micro"
   network                        = "kitchen-vpc"
   point_in_time_recovery_enabled = true
   project_id                     = var.project_id

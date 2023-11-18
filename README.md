@@ -1,4 +1,4 @@
-# <img align="left" width="45" height="45" src="https://github.com/osinfra-io/terraform-google-cloud-sql/assets/1610100/7b264c45-cb29-457b-86c9-40e3b82e44d4"> Google Cloud Platform - Project Terraform Module
+# <img align="left" width="45" height="45" src="https://github.com/osinfra-io/terraform-google-cloud-sql/assets/1610100/7b264c45-cb29-457b-86c9-40e3b82e44d4"> Google Cloud Platform - Cloud SQL Terraform Module
 
 **[GitHub Actions](https://github.com/osinfra-io/terraform-google-cloud-sql/actions):**
 
@@ -6,16 +6,15 @@
 
 **[Infracost](https://www.infracost.io):**
 
-[![infracost](https://img.shields.io/endpoint?label=Default%20Project&url=https://dashboard.api.infracost.io/shields/json/cbeecfe3-576f-4553-984c-e451a575ee47/repos/f8112db9-d028-45e6-86f5-c35c48a7c0b8/branch/43abfb4e-f8de-4d81-b98d-de0438843e47/terraform-google-cloud-sql%2520-%2520Default%2520Project)](https://dashboard.infracost.io/org/osinfra-io/repos/f8112db9-d028-45e6-86f5-c35c48a7c0b8) [![infracost](https://img.shields.io/endpoint?label=Logging%20Project&url=https://dashboard.api.infracost.io/shields/json/cbeecfe3-576f-4553-984c-e451a575ee47/repos/f8112db9-d028-45e6-86f5-c35c48a7c0b8/branch/43abfb4e-f8de-4d81-b98d-de0438843e47/terraform-google-cloud-sql%2520-%2520Logging%2520Project)](https://dashboard.infracost.io/org/osinfra-io/repos/f8112db9-d028-45e6-86f5-c35c48a7c0b8)
+[![infracost](https://img.shields.io/endpoint?label=Default%20Cloud%20SQL&url=https://dashboard.api.infracost.io/shields/json/cbeecfe3-576f-4553-984c-e451a575ee47/repos/e834656c-d298-40c8-9d6c-aa3dfec922e5/branch/fce62698-dc38-4eec-9423-3751689c89b4)](https://dashboard.infracost.io/org/osinfra-io/repos/e834656c-d298-40c8-9d6c-aa3dfec922e5?tab=settings)
 
 Monthly cost estimates for this module based on these usage values:
 
 - [default cloud sql](test/fixtures/default_cloud_sql/infracost-usage.yml)
 
-
 ## Repository Description
 
-Terraform **example** module for a Google Cloud Platform project.
+Terraform **example** module for a Google Cloud Platform cloud SQL instance.
 
 💡 *We do not recommend consuming this module like you might a [public module](https://registry.terraform.io/browse/modules). Its purpose is to be a baseline, something you can fork and potentially maintain on your own and modify to fit your organization's needs. Using public modules vs. writing your own has various [drivers and trade-offs](https://docs.osinfra.io/fundamentals/architecture-decision-records/adr-0003) that your organization should evaluate.*
 
@@ -26,7 +25,7 @@ You can check the [test/fixtures](test/fixtures/) directory for example configur
 Google project services must be enabled before using this module. As a best practice, these should be defined in the [terraform-google-project](https://github.com/osinfra-io/terraform-google-project) module. The following services are required:
 
 - sqladmin.googleapis.com
-- servicenetworking.googleapis.com ??
+- servicenetworking.googleapis.com
 
 Here is an example of a basic configuration:
 
@@ -34,13 +33,10 @@ Here is an example of a basic configuration:
 module "cloud-sql" {
   source = "git@github.com:osinfra-io/terraform-google-cloud-sql//regional?ref=v0.0.0"
 
-  client_certs                   = var.client_certs
-  database_version               = "POSTGRES_13"
-  deletion_protection            = false
-  instance_name                  = "${var.instance_name}-${random_id.random.hex}"
-  machine_tier                   = "db-f1-micro"
-  network                        = "test-vpc"
-  project_id                     = var.project_id
+  host_project_id                = "example-host-project"
+  instance_name                  = "example-instance"
+  network                        = "example-vpc"
+  project_id                     = "example-project"
   point_in_time_recovery_enabled = true
   region                         = "us-east1"
 }
@@ -69,7 +65,7 @@ See the documentation for setting up a local development environment [here](http
 
 Links to documentation and other resources required to develop and iterate in this repository successfully.
 
-- [cloud sql](https://)
+- [cloud sql](https://cloud.google.com/sql/docs)
 
 ### 🔍 Tests
 

@@ -34,9 +34,9 @@ No modules.
 | <a name="input_database_flags"></a> [database\_flags](#input\_database\_flags) | The database flags for Cloud SQL. See [PostgreSQL Flags](https://cloud.google.com/sql/docs/postgres/flags) | <pre>list(object({<br>    name  = string<br>    value = string<br>  }))</pre> | `[]` | no |
 | <a name="input_database_version"></a> [database\_version](#input\_database\_version) | The MySQL, PostgreSQL or SQL Server version to use. | `string` | `"POSTGRES_15"` | no |
 | <a name="input_deletion_protection"></a> [deletion\_protection](#input\_deletion\_protection) | Whether or not to allow Terraform to destroy the instance | `bool` | `true` | no |
-| <a name="input_host_project"></a> [host\_project](#input\_host\_project) | Host project for the shared VPC | `string` | `""` | no |
+| <a name="input_host_project_id"></a> [host\_project\_id](#input\_host\_project\_id) | Host project ID for the shared VPC | `string` | `""` | no |
 | <a name="input_instance_name"></a> [instance\_name](#input\_instance\_name) | The name of the instance | `string` | n/a | yes |
-| <a name="input_machine_tier"></a> [machine\_tier](#input\_machine\_tier) | The machine type to use. Postgres supports only shared-core machine types, and custom machine types such as db-custom-2-13312 | `string` | n/a | yes |
+| <a name="input_machine_tier"></a> [machine\_tier](#input\_machine\_tier) | The machine type to use. Postgres supports only shared-core machine types, and custom machine types such as db-custom-2-13312 | `string` | `"db-f1-micro"` | no |
 | <a name="input_mw_day"></a> [mw\_day](#input\_mw\_day) | Maintenance window day | `number` | `4` | no |
 | <a name="input_mw_hour"></a> [mw\_hour](#input\_mw\_hour) | Maintenance window hour | `number` | `17` | no |
 | <a name="input_network"></a> [network](#input\_network) | The VPC network from which the Cloud SQL instance is accessible for private IP | `string` | n/a | yes |

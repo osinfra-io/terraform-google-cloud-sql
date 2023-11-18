@@ -37,8 +37,8 @@ variable "deletion_protection" {
   default     = true
 }
 
-variable "host_project" {
-  description = "Host project for the shared VPC"
+variable "host_project_id" {
+  description = "Host project ID for the shared VPC"
   type        = string
   default     = ""
 }
@@ -51,6 +51,7 @@ variable "instance_name" {
 variable "machine_tier" {
   description = "The machine type to use. Postgres supports only shared-core machine types, and custom machine types such as db-custom-2-13312"
   type        = string
+  default     = "db-f1-micro"
 }
 
 variable "mw_day" {
