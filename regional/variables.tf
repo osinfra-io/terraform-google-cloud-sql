@@ -16,6 +16,11 @@ variable "client_certs" {
   default     = []
 }
 
+variable "cost_center" {
+  description = "The cost center to label the project with"
+  type        = string
+}
+
 variable "database_flags" {
   description = "The database flags for Cloud SQL. See [PostgreSQL Flags](https://cloud.google.com/sql/docs/postgres/flags)"
   type = list(object({
@@ -46,6 +51,12 @@ variable "host_project_id" {
 variable "instance_name" {
   description = "The name of the instance"
   type        = string
+}
+
+variable "labels" {
+  description = "A set of key/value label pairs to assign to the project"
+  type        = map(string)
+  default     = {}
 }
 
 variable "machine_tier" {
