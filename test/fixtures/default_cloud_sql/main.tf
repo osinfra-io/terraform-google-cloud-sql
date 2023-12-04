@@ -1,11 +1,8 @@
-resource "random_id" "random" {
-  byte_length = "3"
-}
-
 module "test" {
   source = "../../../regional"
 
   client_certs = var.client_certs
+  cost_center  = "x000"
 
   database_flags = [
     {
@@ -46,9 +43,15 @@ module "test" {
     }
   ]
 
-  deletion_protection            = false
-  host_project_id                = var.host_project_id
-  instance_name                  = "${var.instance_name}-${random_id.random.hex}"
+  deletion_protection = false
+  host_project_id     = var.host_project_id
+  instance_name       = var.instance_name
+
+  labels = {
+    env  = "sb"
+    team = "testing"
+  }
+
   network                        = "kitchen-vpc"
   point_in_time_recovery_enabled = true
   project_id                     = var.project_id

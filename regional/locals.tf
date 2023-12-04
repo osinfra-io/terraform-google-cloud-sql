@@ -2,5 +2,12 @@
 # https://www.terraform.io/docs/language/values/locals.html
 
 locals {
+  labels = merge(
+    {
+      cost-center = var.cost_center
+    },
+    var.labels
+  )
+
   network = "projects/${var.host_project_id}/global/networks/${var.network}"
 }

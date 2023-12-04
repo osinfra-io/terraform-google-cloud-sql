@@ -4,7 +4,7 @@
 resource "google_sql_database_instance" "this" {
   database_version    = var.database_version
   deletion_protection = var.deletion_protection
-  name                = "${var.instance_name}-${var.region}"
+  name                = "${var.instance_name}-${random_id.this.hex}-${var.region}"
   project             = var.project_id
   region              = var.region
 
@@ -45,7 +45,10 @@ resource "google_sql_database_instance" "this" {
       hour         = var.mw_hour
       update_track = var.update_track
     }
+
+    user_labels = local.labels
   }
+
 
   timeouts {
     create = "60m"
@@ -63,4 +66,12 @@ resource "google_sql_ssl_cert" "this" {
   common_name = each.key
   instance    = google_sql_database_instance.this.name
   project     = var.project_id
+}
+
+# Random ID Resource
+# https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/id
+
+resource "random_id" "this" {
+  prefix      = "tf"
+  byte_length = "1"
 }
