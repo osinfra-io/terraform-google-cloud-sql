@@ -6,7 +6,7 @@
 
 **[Infracost](https://www.infracost.io):**
 
-[![infracost](https://img.shields.io/endpoint?label=Default%20Cloud%20SQL&url=https://dashboard.api.infracost.io/shields/json/cbeecfe3-576f-4553-984c-e451a575ee47/repos/e834656c-d298-40c8-9d6c-aa3dfec922e5/branch/fce62698-dc38-4eec-9423-3751689c89b4)](https://dashboard.infracost.io/org/osinfra-io/repos/e834656c-d298-40c8-9d6c-aa3dfec922e5?tab=settings)
+[![infracost](https://img.shields.io/endpoint?label=default_cloud_sql&url=https://dashboard.api.infracost.io/shields/json/cbeecfe3-576f-4553-984c-e451a575ee47/repos/e834656c-d298-40c8-9d6c-aa3dfec922e5/branch/fce62698-dc38-4eec-9423-3751689c89b4/default_cloud_sql)](https://dashboard.infracost.io/org/osinfra-io/repos/e834656c-d298-40c8-9d6c-aa3dfec922e5?tab=settings)
 
 Monthly cost estimates for this module based on these usage values:
 
@@ -16,11 +16,11 @@ Monthly cost estimates for this module based on these usage values:
 
 Terraform **example** module for a Google Cloud Platform cloud SQL instance.
 
-💡 *We do not recommend consuming this module like you might a [public module](https://registry.terraform.io/browse/modules). Its purpose is to be a baseline, something you can fork and potentially maintain and modify to fit your organization's needs. Using public modules vs. writing your own has various [drivers and trade-offs](https://docs.osinfra.io/fundamentals/architecture-decision-records/adr-0003) that your organization should evaluate.*
+💡 *We do not recommend consuming this module like you might a [public module](https://registry.terraform.io/browse/modules). Its purpose is to be a baseline, something you can fork, potentially maintain, and modify to fit your organization's needs. Using public modules vs. writing your own has various [drivers and trade-offs](https://docs.osinfra.io/fundamentals/architecture-decision-records/adr-0003) that your organization should evaluate.*
 
 ## 🔩 Usage
 
-You can check the [test/fixtures](test/fixtures/) directory for example configurations. These fixtures set up the system for testing by providing all the necessary initial code, thus creating good examples on which to base your configurations.
+You can check the [test/fixtures](test/fixtures/) directory for example configurations. These fixtures set up the system for testing by providing all the necessary initial code, thus creating good examples to base your configurations on.
 
 Google project services must be enabled before using this module. As a best practice, these should be defined in the [terraform-google-project](https://github.com/osinfra-io/terraform-google-project) module. The following services are required:
 
@@ -33,6 +33,7 @@ Here is an example of a basic configuration:
 module "cloud-sql" {
   source = "git@github.com:osinfra-io/terraform-google-cloud-sql//regional?ref=v0.0.0"
 
+  cost_center                    = "x000"
   host_project_id                = "example-host-project"
   instance_name                  = "example-instance"
   network                        = "example-vpc"
@@ -69,7 +70,7 @@ Links to documentation and other resources required to develop and iterate in th
 
 ### 🔍 Tests
 
-You'll need to be a member of the [platform-contributors](https://groups.google.com/a/osinfra.io/g/platform-contributors) Google Group to run the tests. This group manages access to Testing/Sandbox folder in the resource hierarchy. You can request access to this group by opening an issue [here](https://github.com/osinfra-io/google-cloud-hierarchy/issues/new?assignees=&labels=enhancement&projects=&template=add-update-identity-group.yml&title=Add+or+update+identity+group).
+You'll need to be a member of the [platform-contributors](https://groups.google.com/a/osinfra.io/g/platform-contributors) Google Group to run the tests. This group manages access to the resource hierarchy's `Testing/Sandbox` folder. You can request access to this group by opening an issue [here](https://github.com/osinfra-io/google-cloud-hierarchy/issues/new?assignees=&labels=enhancement&projects=&template=add-update-identity-group.yml&title=Add+or+update+identity+group).
 
 ```none
 bundle install
