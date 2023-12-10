@@ -17,7 +17,7 @@ variable "client_certs" {
 }
 
 variable "cost_center" {
-  description = "The cost center to label the project with"
+  description = "The cost center to use for resource labels"
   type        = string
 }
 
@@ -54,7 +54,7 @@ variable "instance_name" {
 }
 
 variable "labels" {
-  description = "A set of key/value label pairs to assign to the project"
+  description = "A map of key/value pairs to assign to the resources being created"
   type        = map(string)
   default     = {}
 }

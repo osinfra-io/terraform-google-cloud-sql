@@ -8,4 +8,4 @@ version: 0.1
 projects:
     - path: test/fixtures/default_cloud_sql
       name: "default_cloud_sql"
-      usage_file: test/fixtures/default_cloud_sql/infracost.yml
+      usage_file: test/fixtures/default_cloud_sql/infracost-usage.yml

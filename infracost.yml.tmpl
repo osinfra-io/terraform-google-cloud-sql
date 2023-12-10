@@ -11,6 +11,6 @@ projects:
   {{- if ne $project.name "shared"}}
     - path: {{ print $project._dir "/" $project.name }}
       name: "{{ $project.name }}"
-      usage_file: {{ print $project._dir "/" $project.name  "/infracost.yml" }}
+      usage_file: {{ print $project._dir "/" $project.name  "/infracost-usage.yml" }}
   {{- end }}
 {{- end}}
