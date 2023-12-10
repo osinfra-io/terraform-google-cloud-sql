@@ -10,7 +10,7 @@
 
 Monthly cost estimates for this module based on these usage values:
 
-- [default cloud sql](test/fixtures/default_cloud_sql/infracost.yml)
+- [default cloud sql](test/fixtures/default_cloud_sql/infracost-usage.yml)
 
 ## Repository Description
 
