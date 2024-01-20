@@ -21,7 +21,7 @@ variable "cost_center" {
   type        = string
 }
 
-variable "database_flags" {
+variable "postgres_database_flags" {
   description = "The database flags for Cloud SQL. See [PostgreSQL Flags](https://cloud.google.com/sql/docs/postgres/flags)"
   type = list(object({
     name  = string

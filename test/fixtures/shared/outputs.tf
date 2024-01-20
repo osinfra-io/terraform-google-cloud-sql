@@ -2,6 +2,7 @@ output "client_cert" {
   value = {
     for cert in var.client_certs : cert => module.test.client_cert[cert]
   }
+  sensitive = true
 }
 
 output "instance_server_ca_cert" {

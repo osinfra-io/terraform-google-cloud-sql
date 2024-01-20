@@ -3,6 +3,7 @@ output "client_cert" {
   value = {
     for cert in var.client_certs : cert => google_sql_ssl_cert.this[cert].cert
   }
+  sensitive = true
 }
 
 output "instance_server_ca_cert" {

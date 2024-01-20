@@ -4,42 +4,14 @@ module "test" {
   client_certs = var.client_certs
   cost_center  = "x000"
 
-  database_flags = [
+  postgres_database_flags = [
     {
-      name  = "cloudsql.enable_pgaudit"
+      name  = "autovacuum"
       value = "on"
     },
     {
-      name  = "log_checkpoints"
-      value = "on"
-    },
-    {
-      name  = "log_connections"
-      value = "on"
-    },
-    {
-      name  = "log_disconnections"
-      value = "on"
-    },
-    {
-      name  = "log_hostname"
-      value = "on"
-    },
-    {
-      name  = "log_lock_waits"
-      value = "on"
-    },
-    {
-      name  = "log_min_duration_statement"
-      value = "-1"
-    },
-    {
-      name  = "log_min_messages"
-      value = "error"
-    },
-    {
-      name  = "log_statement"
-      value = "ddl"
+      name  = "deadlock_timeout"
+      value = 2000
     }
   ]
 
