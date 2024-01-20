@@ -6,7 +6,8 @@ output "client_cert" {
 }
 
 output "instance_server_ca_cert" {
-  value = module.test.instance_server_ca_cert
+  value     = module.test.instance_server_ca_cert
+  sensitive = true
 }
 
 output "private_key" {

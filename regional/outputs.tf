@@ -9,6 +9,7 @@ output "client_cert" {
 output "instance_server_ca_cert" {
   description = "The SQL instance server CA certificate"
   value       = google_sql_database_instance.this.server_ca_cert[0].cert
+  sensitive   = true
 }
 
 output "private_key" {
