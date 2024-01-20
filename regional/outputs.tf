@@ -3,11 +3,13 @@ output "client_cert" {
   value = {
     for cert in var.client_certs : cert => google_sql_ssl_cert.this[cert].cert
   }
+  sensitive = true
 }
 
 output "instance_server_ca_cert" {
   description = "The SQL instance server CA certificate"
   value       = google_sql_database_instance.this.server_ca_cert[0].cert
+  sensitive   = true
 }
 
 output "private_key" {
