@@ -20,8 +20,9 @@ module "test" {
   instance_name       = var.instance_name
 
   labels = {
-    env  = "sb"
-    team = "testing"
+    env        = "sb"
+    repository = "terraform-google-cloud-sql"
+    team       = "testing"
   }
 
   network                        = "kitchen-vpc"
