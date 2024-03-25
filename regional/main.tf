@@ -5,7 +5,7 @@ resource "google_sql_database_instance" "this" {
   database_version    = var.database_version
   deletion_protection = var.deletion_protection
   name                = "${var.instance_name}-${random_id.this.hex}-${var.region}"
-  project             = var.project_id
+  project             = var.project
   region              = var.region
 
   settings {
@@ -65,7 +65,7 @@ resource "google_sql_ssl_cert" "this" {
 
   common_name = each.key
   instance    = google_sql_database_instance.this.name
-  project     = var.project_id
+  project     = var.project
 }
 
 # Random ID Resource

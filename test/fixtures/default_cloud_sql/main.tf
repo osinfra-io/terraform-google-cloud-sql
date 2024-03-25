@@ -27,6 +27,6 @@ module "test" {
 
   network                        = "kitchen-vpc"
   point_in_time_recovery_enabled = true
-  project_id                     = var.project_id
+  project                        = var.project
   region                         = "us-east1"
 }

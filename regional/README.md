@@ -45,7 +45,7 @@ No modules.
 | <a name="input_network"></a> [network](#input\_network) | The VPC network from which the Cloud SQL instance is accessible for private IP | `string` | n/a | yes |
 | <a name="input_point_in_time_recovery_enabled"></a> [point\_in\_time\_recovery\_enabled](#input\_point\_in\_time\_recovery\_enabled) | True if Point-in-time recovery is enabled. Will restart database if enabled after instance creation. Valid only for PostgreSQL instances | `bool` | `false` | no |
 | <a name="input_postgres_database_flags"></a> [postgres\_database\_flags](#input\_postgres\_database\_flags) | The database flags for Cloud SQL. See [PostgreSQL Flags](https://cloud.google.com/sql/docs/postgres/flags) | <pre>list(object({<br>    name  = string<br>    value = string<br>  }))</pre> | `[]` | no |
-| <a name="input_project_id"></a> [project\_id](#input\_project\_id) | The ID of the project in which the resource belongs | `string` | n/a | yes |
+| <a name="input_project"></a> [project](#input\_project) | The ID of the project in which the resource belongs | `string` | n/a | yes |
 | <a name="input_query_insights_enabled"></a> [query\_insights\_enabled](#input\_query\_insights\_enabled) | True if Query Insights feature is enabled | `bool` | `true` | no |
 | <a name="input_query_plans_per_minute"></a> [query\_plans\_per\_minute](#input\_query\_plans\_per\_minute) | Number of query execution plans captured by Insights per minute for all queries combined. Between 0 and 20 | `number` | `5` | no |
 | <a name="input_query_string_length"></a> [query\_string\_length](#input\_query\_string\_length) | Maximum query length stored in bytes. Between 256 and 4500 | `number` | `1024` | no |

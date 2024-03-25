@@ -27,7 +27,7 @@ output "private_ip_address" {
 
 output "project_id" {
   description = "The ID of the project in which the resource belongs"
-  value       = var.project_id
+  value       = var.project
 }
 
 output "sql_instance" {

@@ -88,7 +88,7 @@ variable "point_in_time_recovery_enabled" {
   default     = false
 }
 
-variable "project_id" {
+variable "project" {
   description = "The ID of the project in which the resource belongs"
   type        = string
 }
