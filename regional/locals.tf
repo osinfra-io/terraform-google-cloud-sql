@@ -2,13 +2,6 @@
 # https://www.terraform.io/docs/language/values/locals.html
 
 locals {
-  labels = merge(
-    {
-      cost-center = var.cost_center
-    },
-    var.labels
-  )
-
   network = "projects/${var.host_project_id}/global/networks/${var.network}"
 
   # These flags are required for CIS GCP v1.3.0 compliance

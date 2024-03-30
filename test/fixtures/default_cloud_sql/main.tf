@@ -2,7 +2,6 @@ module "test" {
   source = "../../../regional"
 
   client_certs = var.client_certs
-  cost_center  = "x000"
 
   postgres_database_flags = [
     {
@@ -20,9 +19,10 @@ module "test" {
   instance_name       = var.instance_name
 
   labels = {
-    env        = "sb"
-    repository = "terraform-google-cloud-sql"
-    team       = "testing"
+    cost-center = "x000"
+    env         = "sb"
+    repository  = "terraform-google-cloud-sql"
+    team        = "testing"
   }
 
   network                        = "kitchen-vpc"

@@ -46,7 +46,7 @@ resource "google_sql_database_instance" "this" {
       update_track = var.update_track
     }
 
-    user_labels = local.labels
+    user_labels = var.labels
   }
 
 
