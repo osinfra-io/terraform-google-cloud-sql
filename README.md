@@ -8,9 +8,7 @@
 
 [![infracost](https://img.shields.io/endpoint?label=default_cloud_sql&url=https://dashboard.api.infracost.io/shields/json/cbeecfe3-576f-4553-984c-e451a575ee47/repos/e834656c-d298-40c8-9d6c-aa3dfec922e5/branch/fce62698-dc38-4eec-9423-3751689c89b4/default_cloud_sql)](https://dashboard.infracost.io/org/osinfra-io/repos/e834656c-d298-40c8-9d6c-aa3dfec922e5?tab=settings)
 
-Monthly cost estimates for this module based on these usage values:
-
-- [default cloud sql](test/fixtures/default_cloud_sql/infracost-usage.yml)
+💵 Monthly estimates based on Infracost baseline costs.
 
 ## Repository Description
 
@@ -28,22 +26,6 @@ Google project services must be enabled before using this module. As a best prac
 
 - `sqladmin.googleapis.com`
 - `servicenetworking.googleapis.com`
-
-Here is an example of a basic configuration:
-
-```hcl
-module "cloud-sql" {
-  source = "git@github.com:osinfra-io/terraform-google-cloud-sql//regional?ref=v0.0.0"
-
-  cost_center                    = "x000"
-  host_project_id                = "example-host-project"
-  instance_name                  = "example-instance"
-  network                        = "example-vpc"
-  project_id                     = "example-project"
-  point_in_time_recovery_enabled = true
-  region                         = "us-east1"
-}
-```
 
 ## <img align="left" width="35" height="35" src="https://github.com/osinfra-io/github-organization-management/assets/1610100/39d6ae3b-ccc2-42db-92f1-276a5bc54e65"> Development
 
