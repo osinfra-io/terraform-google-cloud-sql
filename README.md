@@ -6,7 +6,7 @@
 
 **[Infracost](https://www.infracost.io):**
 
-[![infracost](https://img.shields.io/endpoint?label=default_cloud_sql&url=https://dashboard.api.infracost.io/shields/json/cbeecfe3-576f-4553-984c-e451a575ee47/repos/e834656c-d298-40c8-9d6c-aa3dfec922e5/branch/fce62698-dc38-4eec-9423-3751689c89b4/default_cloud_sql)](https://dashboard.infracost.io/org/osinfra-io/repos/e834656c-d298-40c8-9d6c-aa3dfec922e5?tab=settings)
+[![infracost](https://img.shields.io/endpoint?url=https://dashboard.api.infracost.io/shields/json/cbeecfe3-576f-4553-984c-e451a575ee47/repos/e834656c-d298-40c8-9d6c-aa3dfec922e5/branch/fce62698-dc38-4eec-9423-3751689c89b4)](https://dashboard.infracost.io/org/osinfra-io/repos/e834656c-d298-40c8-9d6c-aa3dfec922e5?tab=settings)
 
 💵 Monthly estimates based on Infracost baseline costs.
 
