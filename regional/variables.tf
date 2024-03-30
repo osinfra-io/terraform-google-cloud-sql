@@ -16,11 +16,6 @@ variable "client_certs" {
   default     = []
 }
 
-variable "cost_center" {
-  description = "The cost center to use for resource labels"
-  type        = string
-}
-
 variable "postgres_database_flags" {
   description = "The database flags for Cloud SQL. See [PostgreSQL Flags](https://cloud.google.com/sql/docs/postgres/flags)"
   type = list(object({

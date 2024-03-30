@@ -11,7 +11,7 @@ No requirements.
 
 | Name | Version |
 |------|---------|
-| <a name="provider_google"></a> [google](#provider\_google) | 5.8.0 |
+| <a name="provider_google"></a> [google](#provider\_google) | 5.22.0 |
 | <a name="provider_random"></a> [random](#provider\_random) | 3.6.0 |
 
 ## Modules
@@ -33,7 +33,6 @@ No modules.
 | <a name="input_availability_type"></a> [availability\_type](#input\_availability\_type) | The availability type of the Cloud SQL instance | `string` | `"REGIONAL"` | no |
 | <a name="input_backup_start_time"></a> [backup\_start\_time](#input\_backup\_start\_time) | Time indicating when backup configuration starts | `string` | `"04:00"` | no |
 | <a name="input_client_certs"></a> [client\_certs](#input\_client\_certs) | A set of client cert names, note: 10 max per instance | `set(string)` | `[]` | no |
-| <a name="input_cost_center"></a> [cost\_center](#input\_cost\_center) | The cost center to use for resource labels | `string` | n/a | yes |
 | <a name="input_database_version"></a> [database\_version](#input\_database\_version) | The MySQL, PostgreSQL or SQL Server version to use. | `string` | `"POSTGRES_15"` | no |
 | <a name="input_deletion_protection"></a> [deletion\_protection](#input\_deletion\_protection) | Whether or not to allow Terraform to destroy the instance | `bool` | `true` | no |
 | <a name="input_host_project_id"></a> [host\_project\_id](#input\_host\_project\_id) | Host project ID for the shared VPC | `string` | `""` | no |
