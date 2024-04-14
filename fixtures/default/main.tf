@@ -1,5 +1,5 @@
 module "test" {
-  source = "../../../regional"
+  source = "../../regional"
 
   client_certs = var.client_certs
 
@@ -25,7 +25,7 @@ module "test" {
     team        = "testing"
   }
 
-  network                        = "kitchen-vpc"
+  network                        = "terraform-test-vpc"
   point_in_time_recovery_enabled = true
   project                        = var.project
   region                         = "us-east1"
