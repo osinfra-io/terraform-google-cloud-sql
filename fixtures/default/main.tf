@@ -25,7 +25,7 @@ module "test" {
     team        = "testing"
   }
 
-  network                        = "kitchen-vpc"
+  network                        = "terraform-testing-vpc"
   point_in_time_recovery_enabled = true
   project                        = var.project
   region                         = "us-east1"
