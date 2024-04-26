@@ -20,7 +20,7 @@ Terraform **example** module for a Google Cloud Platform cloud SQL instance.
 ## 🔩 Usage
 
 > [!TIP]
-> You can check the [fixtures](fixtures) directory for example configurations. These fixtures set up the system for testing by providing all the necessary initial code, thus creating good examples to base your configurations.
+> You can check the [fixtures](fixtures) directory for example configurations. These fixtures set up the system for testing by providing all the necessary initial code, thus creating good examples on which to base your configurations.
 
 Google project services must be enabled before using this module. As a best practice, these should be defined in the [terraform-google-project](https://github.com/osinfra-io/terraform-google-project) module. The following services are required:
 
