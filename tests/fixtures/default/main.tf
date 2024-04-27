@@ -1,5 +1,5 @@
 module "test" {
-  source = "../../regional"
+  source = "../../../regional"
 
   client_certs = var.client_certs
 
