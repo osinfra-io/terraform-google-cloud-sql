@@ -2,6 +2,23 @@
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/sql_database_instance
 
 resource "google_sql_database_instance" "this" {
+
+  # Postgres Database Flags
+  # checkov:skip=CKV2_GCP_13
+  # checkov:skip=CKV_GCP_51
+  # checkov:skip=CKV_GCP_52
+  # checkov:skip=CKV_GCP_53
+  # checkov:skip=CKV_GCP_54
+  # checkov:skip=CKV_GCP_108
+  # checkov:skip=CKV_GCP_109
+  # checkov:skip=CKV_GCP_110
+  # checkov:skip=CKV_GCP_111
+
+  # Manual test:
+  # terraform plan --out tfplan.binary
+  # terraform show -json tfplan.binary | jq > tfplan.json
+  # checkov -f tfplan.json
+
   database_version    = var.database_version
   deletion_protection = var.deletion_protection
   name                = "${var.instance_name}-${random_id.this.hex}-${var.region}"

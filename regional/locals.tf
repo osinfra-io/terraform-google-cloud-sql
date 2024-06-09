@@ -32,6 +32,10 @@ locals {
       value = "on"
     },
     {
+      name  = "log_min_error_statement"
+      value = "error"
+    },
+    {
       name  = "log_min_duration_statement"
       value = "-1"
     },
