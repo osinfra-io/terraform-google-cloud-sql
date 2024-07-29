@@ -119,7 +119,7 @@ variable "record_client_address" {
 }
 
 variable "region" {
-  description = "The region the instance will sit in"
+  description = "The region in which the resource belongs"
   type        = string
 }
 

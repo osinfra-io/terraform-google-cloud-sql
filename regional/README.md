@@ -11,7 +11,7 @@ No requirements.
 
 | Name | Version |
 |------|---------|
-| <a name="provider_google"></a> [google](#provider\_google) | 5.38.0 |
+| <a name="provider_google"></a> [google](#provider\_google) | 5.32.0 |
 | <a name="provider_random"></a> [random](#provider\_random) | 3.6.2 |
 
 ## Modules
@@ -50,7 +50,7 @@ No modules.
 | <a name="input_query_string_length"></a> [query\_string\_length](#input\_query\_string\_length) | Maximum query length stored in bytes. Between 256 and 4500 | `number` | `1024` | no |
 | <a name="input_record_application_tags"></a> [record\_application\_tags](#input\_record\_application\_tags) | True if Query Insights will record application tags from query when enabled | `bool` | `true` | no |
 | <a name="input_record_client_address"></a> [record\_client\_address](#input\_record\_client\_address) | True if Query Insights will record client address when enabled | `bool` | `true` | no |
-| <a name="input_region"></a> [region](#input\_region) | The region the instance will sit in | `string` | n/a | yes |
+| <a name="input_region"></a> [region](#input\_region) | The region in which the resource belongs | `string` | n/a | yes |
 | <a name="input_update_track"></a> [update\_track](#input\_update\_track) | Receive updates earlier | `string` | `"stable"` | no |
 
 ## Outputs
