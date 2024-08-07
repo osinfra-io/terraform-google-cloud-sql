@@ -20,7 +20,7 @@ resource "google_sql_database_instance" "this" {
   # checkov -f tfplan.json
 
   # Ensure all Cloud SQL database instance requires all incoming connections to use SSL
-  # checkov:skip=CKV_GCP_6: The require_ssl is deprecated: https://github.com/bridgecrewio/checkov/issues/6102
+  # checkov:skip=CKV_GCP_6: The require_ssl argument is deprecated: https://github.com/bridgecrewio/checkov/issues/6102
 
   database_version    = var.database_version
   deletion_protection = var.deletion_protection
