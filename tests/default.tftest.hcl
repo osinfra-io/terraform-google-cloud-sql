@@ -14,8 +14,8 @@ variables {
     "mock-client-cert-b"
   ]
 
-  environment = "mock-environment"
+  environment     = "mock-environment"
   host_project_id = "mock-host-project"
-  instance_name = "mock-instance"
-  project = "mock-project"
+  instance_name   = "mock-instance"
+  project         = "mock-project"
 }
