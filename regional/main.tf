@@ -3,7 +3,7 @@
 
 resource "google_sql_database_instance" "this" {
 
-  # Postgres Database Flags
+  # Postgres Database Flags false positives
   # checkov:skip=CKV2_GCP_13
   # checkov:skip=CKV_GCP_51
   # checkov:skip=CKV_GCP_52
@@ -18,6 +18,9 @@ resource "google_sql_database_instance" "this" {
   # terraform plan --out tfplan.binary
   # terraform show -json tfplan.binary | jq > tfplan.json
   # checkov -f tfplan.json
+
+  # Ensure all Cloud SQL database instance requires all incoming connections to use SSL
+  # checkov:skip=CKV_GCP_6: The require_ssl is deprecated: https://github.com/bridgecrewio/checkov/issues/6102
 
   database_version    = var.database_version
   deletion_protection = var.deletion_protection
@@ -54,7 +57,7 @@ resource "google_sql_database_instance" "this" {
     ip_configuration {
       ipv4_enabled    = false
       private_network = local.network
-      require_ssl     = true
+      ssl_mode        = "ENCRYPTED_ONLY"
     }
 
     maintenance_window {
@@ -62,6 +65,7 @@ resource "google_sql_database_instance" "this" {
       hour         = var.mw_hour
       update_track = var.update_track
     }
+
 
     user_labels = var.labels
   }
