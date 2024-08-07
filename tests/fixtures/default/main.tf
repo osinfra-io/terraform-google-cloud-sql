@@ -1,3 +1,11 @@
+terraform {
+  required_providers {
+    google = {
+      source = "hashicorp/google"
+    }
+  }
+}
+
 module "test" {
   source = "../../../regional"
 
@@ -5,28 +13,17 @@ module "test" {
 
   postgres_database_flags = [
     {
-      name  = "autovacuum"
+      name  = "mock"
       value = "on"
-    },
-    {
-      name  = "deadlock_timeout"
-      value = 2000
     }
   ]
 
-  deletion_protection = false
-  host_project_id     = var.host_project_id
-  instance_name       = var.instance_name
-
-  labels = {
-    cost-center = "x000"
-    env         = "sb"
-    repository  = "terraform-google-cloud-sql"
-    team        = "testing"
-  }
-
-  network                        = "terraform-test-vpc"
+  deletion_protection            = false
+  host_project_id                = var.host_project_id
+  instance_name                  = var.instance_name
+  labels                         = local.labels
+  network                        = "mock-vpc"
   point_in_time_recovery_enabled = true
   project                        = var.project
-  region                         = "us-east1"
+  region                         = "mock-region"
 }
