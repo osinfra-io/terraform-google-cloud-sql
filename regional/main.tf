@@ -70,7 +70,6 @@ resource "google_sql_database_instance" "this" {
     user_labels = var.labels
   }
 
-
   timeouts {
     create = "60m"
     delete = "60m"

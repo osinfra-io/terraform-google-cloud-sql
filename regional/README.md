@@ -2,7 +2,7 @@
 
 A child module automatically inherits its parent's default (un-aliased) provider configurations. The provider versions below are informational only and do **not** need to align with the provider configurations from its parent.
 
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 No requirements.
@@ -11,8 +11,8 @@ No requirements.
 
 | Name | Version |
 |------|---------|
-| <a name="provider_google"></a> [google](#provider\_google) | 5.40.0 |
-| <a name="provider_random"></a> [random](#provider\_random) | 3.6.2 |
+| <a name="provider_google"></a> [google](#provider\_google) | 6.2.0 |
+| <a name="provider_random"></a> [random](#provider\_random) | 3.6.3 |
 
 ## Modules
 
@@ -58,9 +58,8 @@ No modules.
 | Name | Description |
 |------|-------------|
 | <a name="output_client_cert"></a> [client\_cert](#output\_client\_cert) | The client certificate |
+| <a name="output_instance"></a> [instance](#output\_instance) | SQL instance name |
 | <a name="output_instance_server_ca_cert"></a> [instance\_server\_ca\_cert](#output\_instance\_server\_ca\_cert) | The SQL instance server CA certificate |
 | <a name="output_private_ip_address"></a> [private\_ip\_address](#output\_private\_ip\_address) | SQL instance private IP address |
 | <a name="output_private_key"></a> [private\_key](#output\_private\_key) | The client private key |
-| <a name="output_project_id"></a> [project\_id](#output\_project\_id) | The ID of the project in which the resource belongs |
-| <a name="output_sql_instance"></a> [sql\_instance](#output\_sql\_instance) | SQL instance name |
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- END_TF_DOCS -->

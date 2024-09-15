@@ -1,3 +1,6 @@
+# Input Variables
+# https://www.terraform.io/language/values/variables
+
 variable "availability_type" {
   description = "The availability type of the Cloud SQL instance"
   type        = string
@@ -14,15 +17,6 @@ variable "client_certs" {
   description = "A set of client cert names, note: 10 max per instance"
   type        = set(string)
   default     = []
-}
-
-variable "postgres_database_flags" {
-  description = "The database flags for Cloud SQL. See [PostgreSQL Flags](https://cloud.google.com/sql/docs/postgres/flags)"
-  type = list(object({
-    name  = string
-    value = string
-  }))
-  default = []
 }
 
 variable "database_version" {
@@ -81,6 +75,15 @@ variable "point_in_time_recovery_enabled" {
   description = "True if Point-in-time recovery is enabled. Will restart database if enabled after instance creation. Valid only for PostgreSQL instances"
   type        = bool
   default     = false
+}
+
+variable "postgres_database_flags" {
+  description = "The database flags for Cloud SQL. See [PostgreSQL Flags](https://cloud.google.com/sql/docs/postgres/flags)"
+  type = list(object({
+    name  = string
+    value = string
+  }))
+  default = []
 }
 
 variable "project" {

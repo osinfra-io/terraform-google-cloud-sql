@@ -1,3 +1,6 @@
+# Output Values
+# https://www.terraform.io/docs/language/values/outputs.html
+
 output "client_cert" {
   description = "The client certificate"
   value = {
@@ -12,6 +15,11 @@ output "instance_server_ca_cert" {
   sensitive   = true
 }
 
+output "private_ip_address" {
+  description = "SQL instance private IP address"
+  value       = google_sql_database_instance.this.private_ip_address
+}
+
 output "private_key" {
   description = "The client private key"
   value = {
@@ -20,17 +28,7 @@ output "private_key" {
   sensitive = true
 }
 
-output "private_ip_address" {
-  description = "SQL instance private IP address"
-  value       = google_sql_database_instance.this.private_ip_address
-}
-
-output "project_id" {
-  description = "The ID of the project in which the resource belongs"
-  value       = var.project
-}
-
-output "sql_instance" {
+output "instance" {
   description = "SQL instance name"
   value       = google_sql_database_instance.this.name
 }
