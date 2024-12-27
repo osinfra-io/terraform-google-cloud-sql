@@ -11,7 +11,7 @@ No requirements.
 
 | Name | Version |
 |------|---------|
-| <a name="provider_google"></a> [google](#provider\_google) | 6.2.0 |
+| <a name="provider_google"></a> [google](#provider\_google) | 6.14.1 |
 | <a name="provider_random"></a> [random](#provider\_random) | 3.6.3 |
 
 ## Modules
@@ -33,7 +33,7 @@ No modules.
 | <a name="input_availability_type"></a> [availability\_type](#input\_availability\_type) | The availability type of the Cloud SQL instance | `string` | `"REGIONAL"` | no |
 | <a name="input_backup_start_time"></a> [backup\_start\_time](#input\_backup\_start\_time) | Time indicating when backup configuration starts | `string` | `"04:00"` | no |
 | <a name="input_client_certs"></a> [client\_certs](#input\_client\_certs) | A set of client cert names, note: 10 max per instance | `set(string)` | `[]` | no |
-| <a name="input_database_version"></a> [database\_version](#input\_database\_version) | The MySQL, PostgreSQL or SQL Server version to use. | `string` | `"POSTGRES_15"` | no |
+| <a name="input_database_version"></a> [database\_version](#input\_database\_version) | The MySQL, PostgreSQL or SQL Server version to use. | `string` | `"POSTGRES_16"` | no |
 | <a name="input_deletion_protection"></a> [deletion\_protection](#input\_deletion\_protection) | Whether or not to allow Terraform to destroy the instance | `bool` | `true` | no |
 | <a name="input_host_project_id"></a> [host\_project\_id](#input\_host\_project\_id) | Host project ID for the shared VPC | `string` | `""` | no |
 | <a name="input_instance_name"></a> [instance\_name](#input\_instance\_name) | The name of the instance | `string` | n/a | yes |
@@ -43,7 +43,7 @@ No modules.
 | <a name="input_mw_hour"></a> [mw\_hour](#input\_mw\_hour) | Maintenance window hour | `number` | `17` | no |
 | <a name="input_network"></a> [network](#input\_network) | The VPC network from which the Cloud SQL instance is accessible for private IP | `string` | n/a | yes |
 | <a name="input_point_in_time_recovery_enabled"></a> [point\_in\_time\_recovery\_enabled](#input\_point\_in\_time\_recovery\_enabled) | True if Point-in-time recovery is enabled. Will restart database if enabled after instance creation. Valid only for PostgreSQL instances | `bool` | `false` | no |
-| <a name="input_postgres_database_flags"></a> [postgres\_database\_flags](#input\_postgres\_database\_flags) | The database flags for Cloud SQL. See [PostgreSQL Flags](https://cloud.google.com/sql/docs/postgres/flags) | <pre>list(object({<br>    name  = string<br>    value = string<br>  }))</pre> | `[]` | no |
+| <a name="input_postgres_database_flags"></a> [postgres\_database\_flags](#input\_postgres\_database\_flags) | The database flags for Cloud SQL. See [PostgreSQL Flags](https://cloud.google.com/sql/docs/postgres/flags) | <pre>list(object({<br/>    name  = string<br/>    value = string<br/>  }))</pre> | `[]` | no |
 | <a name="input_project"></a> [project](#input\_project) | The ID of the project in which the resource belongs | `string` | n/a | yes |
 | <a name="input_query_insights_enabled"></a> [query\_insights\_enabled](#input\_query\_insights\_enabled) | True if Query Insights feature is enabled | `bool` | `true` | no |
 | <a name="input_query_plans_per_minute"></a> [query\_plans\_per\_minute](#input\_query\_plans\_per\_minute) | Number of query execution plans captured by Insights per minute for all queries combined. Between 0 and 20 | `number` | `5` | no |
