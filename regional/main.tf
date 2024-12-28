@@ -30,6 +30,7 @@ resource "google_sql_database_instance" "this" {
 
   settings {
     availability_type = var.availability_type
+    edition           = "ENTERPRISE"
     tier              = var.machine_tier
 
     backup_configuration {

@@ -51,7 +51,7 @@ variable "labels" {
 variable "machine_tier" {
   description = "The machine type to use. Postgres supports only shared-core machine types, and custom machine types such as db-custom-2-13312"
   type        = string
-  default     = "db-n1-standard-1"
+  default     = "db-f1-micro"
 }
 
 variable "mw_day" {
