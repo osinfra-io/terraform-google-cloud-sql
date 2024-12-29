@@ -24,12 +24,13 @@ resource "google_sql_database_instance" "this" {
 
   database_version    = var.database_version
   deletion_protection = var.deletion_protection
-  name                = "${var.instance_name}-${random_id.this.hex}-${var.region}"
+  name                = local.name
   project             = var.project
   region              = var.region
 
   settings {
     availability_type = var.availability_type
+    edition           = "ENTERPRISE"
     tier              = var.machine_tier
 
     backup_configuration {
@@ -66,14 +67,7 @@ resource "google_sql_database_instance" "this" {
       update_track = var.update_track
     }
 
-
     user_labels = var.labels
-  }
-
-  timeouts {
-    create = "60m"
-    delete = "60m"
-    update = "60m"
   }
 }
 

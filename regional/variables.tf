@@ -22,7 +22,7 @@ variable "client_certs" {
 variable "database_version" {
   description = "The MySQL, PostgreSQL or SQL Server version to use."
   type        = string
-  default     = "POSTGRES_15"
+  default     = "POSTGRES_16"
 }
 
 variable "deletion_protection" {
