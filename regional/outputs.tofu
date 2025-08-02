@@ -1,5 +1,5 @@
 # Output Values
-# https://www.terraform.io/docs/language/values/outputs.html
+# https://opentofu.org/docs/language/values/outputs
 
 output "client_cert" {
   description = "The client certificate"

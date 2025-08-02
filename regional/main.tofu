@@ -1,27 +1,7 @@
 # Google SQL Database Instance
-# https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/sql_database_instance
+# https://search.opentofu.org/provider/hashicorp/google/latest/docs/resources/sql_database_instance
 
 resource "google_sql_database_instance" "this" {
-
-  # Postgres Database Flags false positives
-  # checkov:skip=CKV2_GCP_13
-  # checkov:skip=CKV_GCP_51
-  # checkov:skip=CKV_GCP_52
-  # checkov:skip=CKV_GCP_53
-  # checkov:skip=CKV_GCP_54
-  # checkov:skip=CKV_GCP_108
-  # checkov:skip=CKV_GCP_109
-  # checkov:skip=CKV_GCP_110
-  # checkov:skip=CKV_GCP_111
-
-  # Manual test:
-  # terraform plan --out tfplan.binary
-  # terraform show -json tfplan.binary | jq > tfplan.json
-  # checkov -f tfplan.json
-
-  # Ensure all Cloud SQL database instance requires all incoming connections to use SSL
-  # checkov:skip=CKV_GCP_6: The require_ssl argument is deprecated: https://github.com/bridgecrewio/checkov/issues/6102
-
   database_version    = var.database_version
   deletion_protection = var.deletion_protection
   name                = local.name
@@ -72,7 +52,7 @@ resource "google_sql_database_instance" "this" {
 }
 
 # Google SQL SSL Certificate Resource
-# https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/sql_ssl_cert
+# https://search.opentofu.org/provider/hashicorp/google/latest/docs/resources/sql_ssl_cert
 
 resource "google_sql_ssl_cert" "this" {
   for_each = var.client_certs
@@ -83,7 +63,7 @@ resource "google_sql_ssl_cert" "this" {
 }
 
 # Random ID Resource
-# https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/id
+# https://search.opentofu.org/provider/hashicorp/random/latest/docs/resources/id
 
 resource "random_id" "this" {
   prefix      = "tf"
