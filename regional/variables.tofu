@@ -1,5 +1,5 @@
 # Input Variables
-# https://www.terraform.io/language/values/variables
+# https://opentofu.org/docs/language/values/variables
 
 variable "availability_type" {
   description = "The availability type of the Cloud SQL instance"
@@ -26,7 +26,7 @@ variable "database_version" {
 }
 
 variable "deletion_protection" {
-  description = "Whether or not to allow Terraform to destroy the instance"
+  description = "Whether or not to allow OpenTofu to destroy the instance"
   type        = bool
   default     = true
 }
